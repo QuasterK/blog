@@ -1,5 +1,9 @@
 <h1>new article will be here!, yey!<h1>
-
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
   <%= form_with scope: :article, url: articles_path, local: true do |form| %>
   <p>
     <%= form.label :title %><br>
